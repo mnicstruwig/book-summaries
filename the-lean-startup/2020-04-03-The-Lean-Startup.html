@@ -1,0 +1,979 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-05-30 Sat 15:59 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Lean Startup</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Michael Struwig (michael@praelexis.com)" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">The Lean Startup</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org275b5ab">Introduction</a>
+<ul>
+<li><a href="#orgcc803d7">The lean startup method</a></li>
+</ul>
+</li>
+<li><a href="#org9e00f5a">Part 1: Vision</a>
+<ul>
+<li><a href="#org5b580d6">1: Start</a></li>
+<li><a href="#org44ab3c4">2: Define</a></li>
+<li><a href="#org976ad95">3: Learn</a></li>
+<li><a href="#org142c87d">4: Experiment</a></li>
+</ul>
+</li>
+<li><a href="#org97b4775">Part 2: Steer</a>
+<ul>
+<li><a href="#orgf377434">5. Leap</a></li>
+<li><a href="#orgdbcc34f">6. Test</a></li>
+<li><a href="#org94d65bd">7. Measure</a></li>
+<li><a href="#org9ed6334">8. Pivot (or Persevere)</a></li>
+</ul>
+</li>
+<li><a href="#orgb0b31f8">Part 3: Accelerate</a>
+<ul>
+<li><a href="#orgf1ddac1">9. Batch</a></li>
+<li><a href="#orgf4a99da">10. Grow</a></li>
+<li><a href="#org49cf550">11. Adapt</a></li>
+<li><a href="#org37384ff">12. Innovate</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org275b5ab" class="outline-2">
+<h2 id="org275b5ab">Introduction</h2>
+<div class="outline-text-2" id="text-org275b5ab">
+<ul class="org-ul">
+<li>Grim reality: most startups fail.</li>
+</ul>
+</div>
+<div id="outline-container-orgcc803d7" class="outline-3">
+<h3 id="orgcc803d7">The lean startup method</h3>
+<div class="outline-text-3" id="text-orgcc803d7">
+<ol class="org-ol">
+<li>Entrepreneurs are everywhere</li>
+<li>Entrepreneurship is management</li>
+<li>Validated learning</li>
+<li>Build-Measure-Learn</li>
+<li>Innovation accounting</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org9e00f5a" class="outline-2">
+<h2 id="org9e00f5a">Part 1: Vision</h2>
+<div class="outline-text-2" id="text-org9e00f5a">
+</div>
+<div id="outline-container-org5b580d6" class="outline-3">
+<h3 id="org5b580d6">1: Start</h3>
+<div class="outline-text-3" id="text-org5b580d6">
+<ul class="org-ul">
+<li>"Lean Startup" comes from lean manufacturing revolution by Taiichi Ohno and
+Shigeo Shingo at Toyota.</li>
+<li>Goal of a startup is to figure out the right thing to build &#x2013; the thing
+customers want and will pay for &#x2013; as quickly as possible.</li>
+<li>"Lean startup" is a new way of looking at the development of innovative new
+products with an emphasis on fast iteration, customer insight, vision and
+ambition (simultaneously)</li>
+<li><i>Engine of growth</i>
+<ul class="org-ul">
+<li>Every new version of product, feature or marketing program &#x2013;&gt; attempt to
+improve the engine of growth.</li>
+</ul></li>
+<li><i>Vision</i> &#x2013;&gt; destination in mind for the startup.</li>
+<li>Vision is achieved by executing a <i>Strategy</i>.
+<ul class="org-ul">
+<li>business model, product road map, etc.</li>
+</ul></li>
+<li><i>Product</i> &#x2013;&gt; result of the strategy.</li>
+<li><i>Tuning the engine</i> &#x2013;&gt; products change constantly through the process of
+optimization.</li>
+<li><i>Pivot</i> &#x2013;&gt; When the strategy has to change.
+<ul class="org-ul">
+<li>But the vision rarely changes.</li>
+</ul></li>
+</ul>
+
+<div class="figure">
+<p><img src="image/the_lean_startup_pyramid.png" alt="the_lean_startup_pyramid.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>In general management, failure is usually (1) a result of failing to plan
+properly, or (2) failure to execute properly. But new product development
+requires this kind of failure.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org44ab3c4" class="outline-3">
+<h3 id="org44ab3c4">2: Define</h3>
+<div class="outline-text-3" id="text-org44ab3c4">
+<ul class="org-ul">
+<li><i>Startup</i> &#x2013;&gt; A human institution designed to create a new product or
+service under conditions of extreme uncertainty.
+<ul class="org-ul">
+<li>Note: nothing about size of company, industry or sector of economy.</li>
+<li><i>Product</i> &#x2013;&gt; (broad definition used) any source of value for the people
+who become customers.</li>
+</ul></li>
+<li>Usually bigger companies are good at <i>sustaining innovation</i> (incremental
+improvement), but they're bad at <i>disruptive innovation</i> (breakthrough new
+products).</li>
+<li>Cultivating entrepreneurship is the responsibility of senior management.</li>
+<li>The amount of time a company can count on holding on to market leadership
+to exploit its earlier innovation is shrinking.</li>
+<li>Therefore, a company's only sustainable path is an "Innovation factory"
+that uses Lean Startup techniques to create disruptive innovations
+continuously.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org976ad95" class="outline-3">
+<h3 id="org976ad95">3: Learn</h3>
+<div class="outline-text-3" id="text-org976ad95">
+<ul class="org-ul">
+<li>"Learning" is the oldest excuse for failure of execution.</li>
+<li>But if the goal of entrepreneurship is to have an organization succeed in
+the face of extreme uncertainty, the most vital function is <i>learning</i>.
+<ul class="org-ul">
+<li>Learn which elements of strategy are working</li>
+<li>Learn what customers really want</li>
+<li>etc.</li>
+</ul></li>
+<li><i>Validated learning</i> &#x2013;&gt; process of demonstrating <b>empirically</b> that a team
+has discovered valuable truths</li>
+<li>NB: Customers cannot necessarily <span class="underline">tell</span> you what they want &#x2013; but they reveal
+the truth through actions or inaction.</li>
+<li>Need to answer "which of our efforts are value-creating and which are wasteful?"</li>
+<li><i>value</i> &#x2013;&gt; providing benefit to the customer. Anything else is waste.</li>
+<li>Most of the time, customers don't know what they want in advance.</li>
+<li>The right way to think about productivity &#x2013;&gt; how much
+validated learning are you getting for your efforts. <i>Not</i> how much you're building.</li>
+<li>You want to use the Scientific Method (hypothesis testing)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org142c87d" class="outline-3">
+<h3 id="org142c87d">4: Experiment</h3>
+<div class="outline-text-3" id="text-org142c87d">
+<ul class="org-ul">
+<li>If you cannot fail, you cannot learn.</li>
+<li>True experiment &#x2013;&gt; follow scientific experiment
+<ul class="org-ul">
+<li>Begin with hypothesis that makes predictions &#x2013;&gt; test predictions empirically.</li>
+</ul></li>
+<li><i>Value hypothesis</i> &#x2013;&gt; tests whether a product or service really delivers
+value to customers once they are using it.</li>
+<li><i>Growth hypothesis</i> &#x2013;&gt; test how new customers will discover a product or
+service.</li>
+<li>An experiment should also be seen as a <i>first product</i></li>
+<li><p>
+This allows the spec to be rooted in real feedback on what is working
+<i>right now</i> rather than in anticipation of what might work tomorrow.
+</p>
+
+<blockquote>
+<p>
+Success is not delivering a feature, success is learning how to solve the
+customer's problem.
+</p>
+
+<p>
+&#x2014; Mark Cook
+</p>
+</blockquote></li>
+
+<li>Planning is a tool that only works in the presence of a long and stable
+operating history.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org97b4775" class="outline-2">
+<h2 id="org97b4775">Part 2: Steer</h2>
+<div class="outline-text-2" id="text-org97b4775">
+<ul class="org-ul">
+<li>Startup is a catalyst that transforms ideas into products</li>
+<li>As customers interact with these products, the generate <i>qualitative</i>
+feedback and <i>quantitative</i> feedback.</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="image/the_lean_startup_loop.png" alt="the_lean_startup_loop.png" width="50%" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>The <i>build-measure-learn</i> loop -&gt; core of Lean Startup</li>
+<li>The goal is <b>minimize the total time</b> it takes to move through the loop
+<ul class="org-ul">
+<li>This is the essence of steering a startup</li>
+</ul></li>
+<li>Starts with a <i>leap-of-faith</i> assumption &#x2013;&gt; The riskiest element of a
+startup's plan, on which everything depends</li>
+<li>Once initial product is running &#x2013;&gt; "Build" phase as quickly as possible</li>
+<li><i>MVP</i> &#x2013;&gt; version of product that enables full turn of Build-Measure-Learn
+loop with the minimum amount of development time.
+<ul class="org-ul">
+<li>But me must be able to measure impact!</li>
+</ul></li>
+<li>Measure phase &#x2013;&gt; Biggest challenge is determining whether product
+developments are leading to real progress.</li>
+<li><i>Innovation accounting</i> &#x2013;&gt; allows us to see whether we're making progress.
+<ul class="org-ul">
+<li>Also allows creation of <i>learning milestones</i></li>
+</ul></li>
+<li><i>Pivot</i> &#x2013;&gt; After completing Build-Measure-Learn loop, we ask whether to
+pivot our original strategy or persevere with the current one.
+<ul class="org-ul">
+<li>If you discover a hypothesis is false &#x2013;&gt; time to change to a new
+strategic hypothesis.</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-orgf377434" class="outline-3">
+<h3 id="orgf377434">5. Leap</h3>
+<div class="outline-text-3" id="text-orgf377434">
+<ul class="org-ul">
+<li>Strategy is based on assumptions</li>
+<li>Because assumptions haven't been proven true &#x2013;&gt; startup's early efforts
+should be to test them as soon as possible.</li>
+<li>First challenge &#x2013;&gt; build an organization that can test assumptions systematically</li>
+<li>Second challenge &#x2013;&gt; perform rigorous testing without losing sight of
+company's vision.</li>
+<li>First step in understanding a new product or service &#x2013;&gt; is it
+<i>value-creating</i> or <i>value-destroying</i>?</li>
+<li><i>Success theater</i> &#x2013;&gt; using the appearance of growth to make it seem you're
+successful.</li>
+<li><i>genchi gembutsu</i> &#x2013;&gt; "go and see for yourself". Saying from Toyota, which
+means that business decision should be based on first-hand knowledge. It is
+unacceptable to take things for granted or to rely on the reports of others.</li>
+<li><i>Get out of the building</i> &#x2013;&gt; entrepreneurs need extensive contact with
+potential customers to understand them.
+<ul class="org-ul">
+<li>You need to confirm that your leap-of-faith questions are based in
+reality; that the customer has a significant problem worth solving</li>
+</ul></li>
+<li>Early contact with customers is to clarify basic, coarse-level assumptions.
+<ul class="org-ul">
+<li>Understand what problems the customer has.</li>
+<li>Leads to <i>customer archetype</i> &#x2013;&gt; short document that humanizes proposed
+target customer.</li>
+</ul></li>
+<li>No amount of design can anticipate the complexities of bringing a product
+to life in the real world.</li>
+<li>Two issues to avoid:
+<ol class="org-ol">
+<li>Building immediately with only a few customer conversations &#x2013;&gt;
+Customers don't know what they really want, so you're deluding yourself.</li>
+<li>Analysis paralysis &#x2013;&gt; endlessly refining their plans.</li>
+</ol></li>
+<li>The problem with most entrepreneurs' plans is that their assumptions are
+<i>wrong</i>, not their underlying strategic principles.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdbcc34f" class="outline-3">
+<h3 id="orgdbcc34f">6. Test</h3>
+<div class="outline-text-3" id="text-orgdbcc34f">
+<ul class="org-ul">
+<li>An MVP helps entrepreneurs start the process of learning as quickly as possible.</li>
+<li>It's the fastest way to get through the Build-Measure-Learn feedback loop
+with the minimum amount of effort (not necessarily the smallest product!)</li>
+<li>MVP &#x2013;&gt; Begins the process of learning.</li>
+<li>When in doubt, simplify your MVP &#x2013; people tend to overestimate features required.</li>
+<li>Any additional work (beyond what is needed to start learning) is a waste.</li>
+<li>If we do not know who the customer is, we do not know what "quality" is.
+<ul class="org-ul">
+<li>Even "low-quality" MVPs can help build a great high-quality product.</li>
+</ul></li>
+<li>Customers only care if it serves their needs, not how long something took
+to build.</li>
+<li>When building an MVP, remove any feature, process or effort that does not
+contribute directly to learning.</li>
+<li>Why build a team in order to explore an idea? &#x2013;&gt; believe you can
+accelerate through the Build-Measure-Learn loop faster than anyone else.</li>
+<li><b>The only way to win is to learn faster than anyone else.</b></li>
+<li>Note: MVPs often result in bad news + dose of reality.
+<ul class="org-ul">
+<li>Solution &#x2013;&gt; commitment to iteration. No matter what happens after
+testing MVP, don't give up hope.</li>
+</ul></li>
+<li>Entrepreneurs must possess a unique combination of perseverance and flexibility.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org94d65bd" class="outline-3">
+<h3 id="org94d65bd">7. Measure</h3>
+<div class="outline-text-3" id="text-org94d65bd">
+<ul class="org-ul">
+<li>A startup's task is to rigorously measure where it is right now, confronting
+hard truths.</li>
+<li>And then to devise experiments to learn how to move real numbers closer
+to the ideal in the business plan.</li>
+<li>The myth of perseverance is dangerous.</li>
+<li>Standard accounting is not useful for evaluating entrepreneurs &#x2013;&gt; startups
+are too unpredictable for forecasts to be accurate.</li>
+<li><i>Innovation Accounting</i>
+<ol class="org-ol">
+<li>Use a minimum viable product to establish real data on where the
+company is right now.
+<ul class="org-ul">
+<li>MVP &#x2013;&gt; first <i>learning milestone</i></li>
+<li>Test your riskiest assumptions <i>first</i>.</li>
+</ul></li>
+<li>Startups must attempt to tune the engine from baseline towards the ideal
+<ul class="org-ul">
+<li>Every initiative should be targeted at improving one of the drivers of
+the growth model.</li>
+<li>Good design &#x2013;&gt; changes customer behaviour for the better.</li>
+</ul></li>
+<li>Pivot or persevere
+<ul class="org-ul">
+<li>Making good progress towards the ideal? (Learning appropriately, using
+learning to tune engine) &#x2013;&gt; persevere.</li>
+<li>Otherwise, conclude strategy is flawed &#x2013;&gt; pivot.</li>
+</ul></li>
+</ol></li>
+<li>Traditional product improvement doesn't apply to startups &#x2013;&gt; if you're
+building the wrong thing, optimizing the product does not lead to success.</li>
+<li>Startups need to measure progress through evidence &#x2013;&gt; can only be assessed
+if a startup has made clear predictions (hypotheses) ahead of time.</li>
+<li>Be careful of <i>vanity metrics</i>
+<ul class="org-ul">
+<li>If you optimize for the wrong kinds of metrics, you're not going to grow.</li>
+</ul></li>
+<li>A disciplined team can shift priorities quickly when they realize their mistakes</li>
+<li>A disciplined team can experiment with working style and draw useful conclusions.</li>
+<li>A/B tests are useful for running experiments</li>
+<li>Good process is important for healthy culture &#x2013;&gt; ideas are measured
+according to their merit, not job title.</li>
+<li>Three _A<sub>s</sub> of Metrics &#x2013;&gt; <b>Actionable</b>, <b>Accessible</b> and <b>Auditable</b>.
+<ul class="org-ul">
+<li>Actionable
+<ul class="org-ul">
+<li>A report must demonstrate clear cause and effect &#x2013;&gt; otherwise it is a
+vanity metric.</li>
+</ul></li>
+<li>Accessible
+<ul class="org-ul">
+<li>Too many reports are not understood by employees or managers who need
+them to make a decision.</li>
+<li>Make the reports <i>as simple as possible</i> so that everyone understands
+them &#x2013;&gt; "Metrics are people too"
+<ul class="org-ul">
+<li>Use tangible easy-to-understand and well-defined units</li>
+<li>Cohort-based reports are useful for this too</li>
+</ul></li>
+<li>Offer widespread access to reports, to all employees.</li>
+</ul></li>
+<li>Auditable
+<ul class="org-ul">
+<li>Data needs to be credible.</li>
+<li>Managers must be able to speak with real customers</li>
+<li>Process of generating reports must not be too complicated!</li>
+<li>Reports should be drawn from master data, not an intermediate system</li>
+<li>If a decision gets overturned due to a technical error &#x2013;&gt; confidence,
+morale and discipline gets undermined.</li>
+</ul></li>
+</ul></li>
+<li><b>5% of entrepreneurship is the idea. 95% is innovation accounting.</b></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9ed6334" class="outline-3">
+<h3 id="org9ed6334">8. Pivot (or Persevere)</h3>
+<div class="outline-text-3" id="text-org9ed6334">
+<ul class="org-ul">
+<li>Are we making sufficient progress to believe that our original strategic
+hypothesis is correct, or do we need a major change?</li>
+<li>Biggest destroyer of creative potential &#x2013;&gt; misguided decision to
+persevere.</li>
+<li>Successful pivots put us on a path toward growing a sustainable business.</li>
+<li>"Stuck in the land of the living dead" &#x2013;&gt; Each success to just stay alive,
+but not living up to expectations.</li>
+<li>The more time, money and energy sunk into an idea &#x2013;&gt; harder it becomes to
+pivot (from a decision-making point of view)</li>
+<li>Pivot requires keeping the context of what you've learned so far, while
+also making a fundamental change in strategy to seek even greater validated
+learning.</li>
+<li>Telltale signs to pivot: decreasing effectiveness of product experiments +
+general feeling that product development should be more productive.</li>
+<li>Recommended that every startup has a regular "pivot or persevere" scheduled
+meeting.
+<ul class="org-ul">
+<li>Participation of product development <i>and</i> business leadership</li>
+<li>Product development &#x2013;&gt; bring complete report of results in product
+optimization efforts over time + how results compare to expectations</li>
+<li>Business leadership &#x2013;&gt; detailed accounts of conversations with current
+and potential customers.</li>
+</ul></li>
+<li>pivot != <i>change</i> &#x2013;&gt; rather, change designed to test new fundamental
+hypothesis. Important! Will require a new MVP to test this hypothesis</li>
+<li>Catalog of Pivots
+<ul class="org-ul">
+<li>Zoom-in pivot &#x2013;&gt; what was previously considered a single feature becomes
+the whole product</li>
+<li>Zoom-out pivot &#x2013;&gt; what was considered a whole product becomes a single feature</li>
+<li>Customer segment pivot &#x2013;&gt; product solves the right problem, but for a
+different customer than originally intended.</li>
+<li>Customer need pivot &#x2013;&gt; target customer has problem worth solving
+(discovered after learning customers better), but not with the original product</li>
+<li>Platform pivot &#x2013;&gt; Change from product being an application &lt;-&gt; platform</li>
+<li>Business architecture pivot &#x2013;&gt; between high margin, low volume &lt;-&gt;
+low margin, high volume</li>
+<li>Value capture pivot &#x2013;&gt; pivot the way in which the company makes money</li>
+<li>Engine of growth pivot &#x2013;&gt; pivot growth strategy (viral, sticky, paid).
+Often accompanied with a value capture pivot</li>
+<li>Channel pivot &#x2013;&gt; pivot the mechanism / sales pathway used to sell to customers</li>
+<li>Technology pivot &#x2013;&gt; Achieve the same thing using a new / different
+technology. Often occurs as part of <i>sustaining innovation</i> in established companies.</li>
+</ul></li>
+<li>Pivots are a permanent part for any growing business, even after initial success.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb0b31f8" class="outline-2">
+<h2 id="orgb0b31f8">Part 3: Accelerate</h2>
+<div class="outline-text-2" id="text-orgb0b31f8">
+<ul class="org-ul">
+<li>Startups need organizational structures that combat the extreme uncertainty
+that is a startup's chief enemy.</li>
+<li>First question: which activities create value, and which are a form of
+waste?
+<ul class="org-ul">
+<li>Reminder: value is the <span class="underline">validated learning</span>, not the creation of stuff</li>
+</ul></li>
+<li>Misconception: lethargy and bureaucracy are guaranteed when companies reach
+maturity.</li>
+<li>Companies need to master a management portfolio of sustainable <i>and</i>
+disruptive innovation.</li>
+</ul>
+</div>
+<div id="outline-container-orgf1ddac1" class="outline-3">
+<h3 id="orgf1ddac1">9. Batch</h3>
+<div class="outline-text-3" id="text-orgf1ddac1">
+<ul class="org-ul">
+<li>Small batches &#x2013;&gt; quality issues are identified sooner.</li>
+<li>And what happens when you discover you're building the wrong product?</li>
+<li>Small batches minimize time, money and effort that ends up being wasted.</li>
+<li>Small batches allow us to move through the build-measure-learn loop faster
+than competitors.</li>
+<li><i>large-batch death spiral</i> &#x2013;&gt; large batches grow over time, as moving a
+batch forward requires additional work + rework, which introduces delays
+and interruptions. This incentivises everyone to work in even larger
+batches to minimize overhead. <b>Be very careful / wary of this</b>.</li>
+<li>As soon as you formulate a hypothesis you want to test, product development
+team should be engineered to design and run the experiment ASAP using the
+smallest possible batch size.</li>
+<li>Planning for build-measure-learn happens in reverse: figure out what we
+need to learn &#x2013;&gt; what we need to measure &#x2013;&gt; what we need to build.</li>
+<li>As a result, it is not the customer but our <i>hypothesis about the customer</i>
+that pulls work from product development and other functions. Anything else
+is <i>waste</i>.</li>
+<li>Lean Startup only works if you can build an organization that is as
+adaptable / fast as the challenges it faces</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="image/the_lean_startup_the_startup_way.png" alt="the_lean_startup_the_startup_way.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf4a99da" class="outline-3">
+<h3 id="orgf4a99da">10. Grow</h3>
+<div class="outline-text-3" id="text-orgf4a99da">
+<ul class="org-ul">
+<li>Sustainable growth characterized by "New customers come from the actions of
+past customers"</li>
+<li>Four ways customers drive sustainable growth:
+<ol class="org-ol">
+<li><b>Word of mouth</b></li>
+<li><b>As side effect of product usage</b> &#x2013;&gt; eg. car, fashion, phone, etc.
+Awareness is driven by usage.</li>
+<li><b>Funded advertising</b> &#x2013;&gt; For this to be sustainable, advertising must be
+funded by revenue. Cost of acquiring customer &lt; revenue generated by
+customer. This marginal profit is used to attract more customers (the
+more you have, the faster it goes)</li>
+<li><b>Repeat purchase or use</b> &#x2013;&gt; eg. subscription services, consumables</li>
+</ol></li>
+<li><i>Engines of Growth</i> &#x2013;&gt; the faster the loop turns, the faster the company
+will grow.</li>
+<li><p>
+Engines of growth help gives startups a subset of metrics on which to focus
+their energy.
+</p>
+
+<blockquote>
+<p>
+"Start-ups don't starve, they drown" (in a sea of ideas)
+&#x2014; Shawn Carolan.
+</p>
+</blockquote></li>
+
+<li>Most ideas only make a difference at the margins</li>
+<li><b>Sticky engine of growth</b>
+<ul class="org-ul">
+<li>Rely on high customer retention. Once you start using the product, you
+will continue to use the product.</li>
+<li>Need to track the churn rate very carefully.</li>
+<li>customer acquisition rate &gt; churn rate &#x2013;&gt; growth</li>
+<li>Number of customers / revenue per customer is almost irrelevant as a
+metric for this engine of growth (since it has no impact on growth).</li>
+</ul></li>
+<li><b>Viral engine of growth</b>
+<ul class="org-ul">
+<li>Awareness spreads from person to person rapidly.</li>
+<li>Growth happens as a side-effect of product use (word-of-mouth not necessary)</li>
+<li>Companies must focus on increasing the viral "coefficient" as much as possible.
+<ul class="org-ul">
+<li>Consequence: typically don't charge customers directly, but rely on advertising.</li>
+<li>Monetary exchange does not drive growth &#x2013;&gt; only an indicator the users
+value product enough to pay.</li>
+</ul></li>
+</ul></li>
+<li><b>Paid engine of growth</b>
+<ul class="org-ul">
+<li>Lifetime value of customer - cost of acquiring that customer = growth</li>
+<li>Increase rate of growth by increasing revenue from each customer, or
+reducing cost of acquiring each customer.</li>
+<li>Most sources of customer acquisition come with competition.</li>
+<li>This means that competitors will bid into the marginal profit that you
+depend on for growth.</li>
+<li>Therefore long-term growth requires ability to monetize certain customers in
+multiple ways.</li>
+</ul></li>
+<li>Engine of growth &#x2013;&gt; determines product / market fit</li>
+<li>If you're asking whether you've achieved product / market fit, you haven't.</li>
+<li>Eventually every engine of growth runs out, since you're tied to a given
+set of customers that end up being exhausted.</li>
+<li>This is what provokes crises in companies who's engines of growth have run
+their course, and they don't have incubation projects ready to find the
+next engine of growth.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org49cf550" class="outline-3">
+<h3 id="org49cf550">11. Adapt</h3>
+<div class="outline-text-3" id="text-org49cf550">
+<ul class="org-ul">
+<li><i>Adaptive organization</i> &#x2013;&gt; automatically adjusts process and performance
+to current conditions.</li>
+<li>You can't trade quality for time. If you're experiencing quality problems
+now, the resulting defects will slow you down later.</li>
+<li>Build-Measure-Learn loop is continuous, so shortcuts taken in product
+quality, design or infrastructure today end up slowing the company
+down tomorrow.</li>
+<li>Need an adaptive process. Going too fast == problems. Invest in preventing
+the problems that waste time. Once resolved, you naturally speed up.</li>
+<li>Until companies can justify return on the investment (which is impossible
+&#x2013;&gt; unknown cost and unknown gain), they do nothing.</li>
+<li><i>Five Whys</i> &#x2013;&gt; Ask the question "Why?" five times to understand the <b>root</b>
+cause of problems. This ties investment to the prevention of most symptoms.</li>
+<li>Make proportional investment to fix the symptoms at each phase of the five
+whys. Minor glitch &#x2013;&gt; minor investment.</li>
+<li>Five Whys regulates speed &#x2013;&gt; more problems, more investment to solve them.
+It settles on an optimal pace for the team. Works great with small batches!</li>
+<li>Be wary of the five "blames" trap &#x2013;&gt; frustrated teammates begin trying to find
+blame, rather than understand root cause. We're trying to find objective
+truth about chronic problems caused by a bad process. <i>Not</i> bad people.
+<ul class="org-ul">
+<li>Make sure everyone affected by problem is in the room during analysis of
+the problem.
+<ul class="org-ul">
+<li>Include anyone who discovered / diagnosed the problem.</li>
+<li>Include anyone who tried to fix the symptom.</li>
+<li>Include anyone who worked on the feature / subsystem.</li>
+<li>If issue was escalated to senior management, people who were involved in
+escalation should be included.</li>
+</ul></li>
+<li>Usually, whoever is left out becomes target for blame.</li>
+<li>Mantra &#x2013;&gt; "If mistakes happen, shame on us for making it so easy to make
+that mistake"</li>
+<li><b>Don't be tempted to save time by sparing busy people from the root cause analysis!</b></li>
+</ul></li>
+<li>Five Whys tips (especially starting out):
+<ul class="org-ul">
+<li>Rules: 1. Be tolerant of all mistakes the first time. 2. Never allow same
+mistake to be made twice.</li>
+</ul></li>
+<li>Crucial when teams are under "too much" pressure, when there are
+calls for investments in preventing problems that cost time and money, etc.
+that someone with sufficient authority is present to insist the process be
+followed and implemented.</li>
+<li>Need to have buy-in for the process to work. Otherwise rely on 2-rule system.</li>
+<li>When introducing Five Whys, start with small low-stakes symptoms to relieve pressure.</li>
+<li>Consider implementing a simple rule that's easy to follow that will automatically trigger a Five
+Whys meeting.</li>
+<li>Don't radically change anything &#x2013;&gt; remember, proportional investment.
+Short, simple meetings with simple changes.</li>
+<li>Use a moderator / "Five Whys Master" to run session. Must have seniority to
+ensure assignments get done &#x2013;&gt; take accountability.</li>
+<li>Organizations have "muscle memory" &#x2013;&gt; it's going to be difficult to
+unlearn past habits and ways of work.</li>
+<li>Need to change the mindset / culture to become Adaptive, but it's not enough.</li>
+<li>You <i>also</i> need to treat work as a system + tune the batch size (Chapter 9)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org37384ff" class="outline-3">
+<h3 id="org37384ff">12. Innovate</h3>
+<div class="outline-text-3" id="text-org37384ff">
+<ul class="org-ul">
+<li>Myth: Companies lose capacity for innovation, creativity and growth when
+they become large.</li>
+<li>Management philosophy change &#x2013;&gt; <i>portfolio thinking</i></li>
+<li>Startup teams need 1. scarce but secure resources, 2. independent authority
+to develop their business, 3. personal stake in the outcome.</li>
+<li><b>1. Scarce but secure resources</b>
+<ul class="org-ul">
+<li>For startups, too much budget is as harmful as too little</li>
+<li>But they're extremely sensitive to mid-course changes.</li>
+<li>Startups &#x2013;&gt; less capital required, but it must be 100% secure.</li>
+</ul></li>
+<li><b>2. Independent development authority</b>
+<ul class="org-ul">
+<li>Must be able to conceive and execute experiments without seeking
+excessive number of approvals</li>
+<li>Recommended to be 100% cross-functional (full-time members from each
+department) &#x2013;&gt; must be able to ship functioning products (not just
+prototypes!)</li>
+<li>Scary for parent organization (hence, personal stake)</li>
+</ul></li>
+<li><b>3. Personal stake in the outcome</b>
+<ul class="org-ul">
+<li>Stock options if private company, bonuses if in parent company tied to
+long-term success.</li>
+<li>Reputation can also be at stake &#x2013;&gt; give major credit if it's a success.</li>
+<li>Critical that the criteria of success are crystal clear, and not based on
+the whims of senior management.</li>
+</ul></li>
+<li>Take serious care to protect established business from internal startup &#x2013;&gt;
+sabotage is a rational response when managers become threatened.</li>
+<li>Transparency is important, don't hide innovation in a black box &#x2013;&gt;
+causes feelings of betrayal, paranoia and politics as managers become
+incentivized to detect and smoke out threats to their position.</li>
+<li>Criticism is aimed at senior executives &#x2013;&gt; dishonesty will
+naturally cause this kind of response in managers.</li>
+<li><i>Innovation sandbox</i>
+<ol class="org-ol">
+<li>Any team can create true split-test experiment that affects only the
+sandboxed part of product / service</li>
+<li>One team sees experiment through from beginning to end.</li>
+<li>No experiment can run longer than the specified amount of time.</li>
+<li>No experiment can affect more than a specified number of customers.</li>
+<li>Every experiment <i>must</i> be evaluated using a single standard report of
+5-10 actionable metrics.</li>
+<li>Every team working inside sandbox must use the <b>same metrics</b>.</li>
+<li>Any team that creates an experiment must monitor the metrics and
+customer reactions while the experiment is in progress. Abort in case of
+catastrophe.</li>
+</ol></li>
+<li>Start with a small sandbox</li>
+<li>Customers in sandbox are <i>real</i> &#x2013;&gt; not a concept or market test!</li>
+<li>Innovation team should be cross-functional + have a clear leader.</li>
+<li>Innovation team should be able to deploy in sandbox without prior
+approval + report on success using actionable metrics</li>
+<li>True experiments easy to label success / failure &#x2013;&gt; they move top-level
+metrics or they don't &#x2013;&gt; immediate learning.</li>
+<li>Small batches + fast feedback loop &#x2013;&gt; teams converge to optimal solutions
+rapidly, even if starting from bad ideas</li>
+<li>Internal start-up teams follow the same accountability as a normal startup:
+build an ideal model based on customer archetypes &#x2013;&gt; launch MVP &#x2013;&gt;
+establish baseline &#x2013;&gt; Tune engine</li>
+<li>Problem: employees follow products they develop as the move from startup
+&#x2013;&gt; optimization + growth &#x2013;&gt; legacy.</li>
+<li>This means strong creative managers wind up in the optimization and growth
+phases instead of innovation!</li>
+<li>Solution: when a product moves between phases, have a hand-off
+between teams (where employees can choose to move, or stay to build
+something new).</li>
+<li>Internal entrepreneurs should be allowed to operate within organizations
+&#x2013;&gt; keep them accountable with innovation accounting.</li>
+<li>As you find success, grow the sandbox over time.</li>
+<li>Senior management should strongly consider whether sandbox teams are
+able to defend themselves politically &#x2013;&gt; any growing of the sandbox <i>must</i>
+consider this.</li>
+<li>At some point, sandbox grows to the point where it becomes the status
+quo &#x2013;&gt; restart the cycle again (usually when it has grown to encompass the
+whole product). <b>This is hard for innovators to accept!</b></li>
+<li>What happens when "Lean startup" becomes the status quo?
+<ul class="org-ul">
+<li>Don't be dogmatic.</li>
+<li>But don't compromise and split the difference either.</li>
+<li>Subject each new idea to the same concept of scientific hypothesis-testing
+<ul class="org-ul">
+<li>Hypothesis &#x2013;&gt; MVP &#x2013;&gt; Measure &#x2013;&gt; Learn &#x2013;&gt; repeat</li>
+</ul></li>
+</ul></li>
+<li>Adopt a new way of working &#x2013;&gt; tempting to blame this new
+system for problems. Sometimes true, sometimes not.</li>
+<li>Must be able to predict the outcome of your changes in order to tell if the problems
+are really problems.</li>
+<li>Lean start up optimizes the build-measure-learn feedback loop (i.e.
+validated learning), <i>not</i> individual productivity. In fact, it may require
+sub-optimizing individual functions.</li>
+<li>It's not about building fast. Or measuring fast. It's about completing the
+<b>loop</b> fast.</li>
+<li>This means switching to validated learning <i>feels worse</i> at first.</li>
+<li>So useful to set expectation (day one!) &#x2013;&gt; loss of productivity is inevitable as part
+of transition.</li>
+<li>Lean startup is a framework &#x2013;&gt; Remember five whys and adaptability.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Michael Struwig (michael@praelexis.com)</p>
+<p class="date">Created: 2020-05-30 Sat 15:59</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
